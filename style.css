@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+    --white: #f5f3ff;
+    --light-violet: #ede9fe;
+    --violet: #ddd6fe;
+    --primary: #a78bfa;
+    --accent: #2563eb;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+}
 .layout {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+aside {
+    padding: 20px;
 }
 
 aside,
@@ -11,29 +29,124 @@ aside nav {
     grid-column: 1/2;
     grid-row: 1/3;
     width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+h1,
+aside nav a {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    font-size: 1.5rem;
+    gap: 0.5rem;
+    padding: 0.3rem;
+}
+
+aside nav a:link,
+aside nav a:visited {
+    text-decoration: none;
+    color: var(--white)
+}
+
+.nav-break{
+    margin-top: 2rem;
 }
 
 header {
     grid-column: 2/3;
     grid-row: 1/2;
+    background-color: var(--white);
 }
 
 .searchbar,
 .controlbar {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.3rem 2rem;
+}
+
+.search {
+    height: 1.5rem;
+    border-radius: 1rem;
+    flex: 1;
+}
+
+.searchbar img{
+    height: 3rem;
+    border-radius: 100%;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.controlbar img{
+    height: 6rem;
+    border-radius: 100%;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-buttons button{
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    border-style: none;
 }
 
 .content {
     display: grid;
     grid-template-columns: 1fr auto;
+    background-color: var(--light-violet);
+    padding: 20px;
 }
 
-.projects {
+.title{
+    font-size: 2rem;
+}
+
+.cards {
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ grid-auto-rows: 200px;
+ gap: 20px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    border-left: 0.5rem solid var(--accent);
+    padding: 20px;
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--violet);
+    overflow: hidden;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.actions {
+    margin-top: 5px;
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
 }
 
 .news {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    padding: 20px;
+    width: 300px;
 }
